@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    background-color: rgb(59, 64, 62);
+    display: inline-block
+}
+
+#navBar {
+    display: flex;
+    justify-content: right;
+    margin-right: 6rem;
+}
+
+#navBar ul{
+    list-style-type: none;
+}
+
+#navBar ul li{
+    padding: 10px 30px;
+    position: relative;
+}
+
+#navBar ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#navBar ul li a:hover{
+    color: blue;
+}
+
+.cartPrint{
+    display: flex;
+}
+
+.cartList{
+    background-color: whitesmoke;
+    border-radius: 50%;
+}
+
+.cartItems{
+    display: none;
+}
+
+#navBar ul li:hover .cartItems{
+    display: block;
+    position: absolute;
+    left: -35%;
+    top: 100%;
+    background-color:whitesmoke;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.cartItems .cartListDetail{
+    display: block;
+    margin: 10px auto;
+}
+
+.cartItems ul li{
+    padding: 15px;
+}
+
+.mainHead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: antiquewhite;
+    font-size: 50px;
+    margin-top: 2rem;
+
+}
+
+#details {
+    margin: 2rem auto;
+    padding: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#moredetails {
+    background-color: whitesmoke;
+    padding: .50rem;
+    border: 2px solid;
+    border-radius: 2%;
+    margin: 1rem auto;
+    width: 30%;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: .5rem;
+}
+
+.picture {
+    width: 300px;
+    height: 250px;
+    border-radius: 8%;
+}
+
+.bottom {
+    margin: 0.75rem .50rem;
+    line-height: 2rem;
+}
+
+.button {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: right;
+}
+
+.cardButton {
+    padding: .50rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgba(49, 183, 174, 0.63);
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    font-size: 1rem;
+}
+
+.cardButton:hover {
+    background: #fff;
+    color: #000;
+}
+
+.cartThumbnail{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
