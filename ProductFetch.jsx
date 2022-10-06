@@ -4,7 +4,8 @@ import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 function ProductFetch() {
   const [randomData, setRandomData] = useState([])
-  const [cart, setCart] = useState([])
+  const saved = localStorage.getItem('totalCart');
+  const [cart, setCart] = useState(saved ? JSON.parse(saved) : [])
 
   useEffect(() => {
 
@@ -17,18 +18,18 @@ function ProductFetch() {
 
   }, [])
 
+  useEffect(() => {
+    const totalCart = JSON.stringify(cart);
+    localStorage.setItem('totalCart', totalCart);
+  }, [cart])
+
   function updateInCart(id) {
     cart[id].quantity = cart[id].quantity + 1;
     cart[id].price = cart[id].price * cart[id].quantity;
     setCart([...cart])
-    // let itemsPresent = false;
-    // if (cart.length > 0) {
-    //   let IdsInCart = cart.map((c) => {return (c.id)})
-    //   IdsInCart.includes(id) ? quantity += 1 : itemsPresent = false;    
-    // }
   }
 
-  function addToCart(id, title, price, thumbnail){
+  function addToCart(id, title, price, thumbnail) {
     let cartItems = {
       id: id,
       title: title,
@@ -37,22 +38,23 @@ function ProductFetch() {
       thumbnail: thumbnail,
     }
     setCart([...cart, cartItems]);
+
   }
 
   function addCart(id, title, price, thumbnail) {
     // updateInCart(id);
     let itemsPresent = false;
     if (cart.length > 0) {
-      let IdsInCart = cart.map((c) => {return (c.id)})
-      itemsPresent = IdsInCart.includes(id) ? IdsInCart.indexOf(id) : false; 
-      (itemsPresent === false) 
-        ? addToCart(id, title, price, thumbnail) 
-        : updateInCart(itemsPresent);   
+      let IdsInCart = cart.map((c) => { return (c.id) })
+      itemsPresent = IdsInCart.includes(id) ? IdsInCart.indexOf(id) : false;
+      (itemsPresent === false)
+        ? addToCart(id, title, price, thumbnail)
+        : updateInCart(itemsPresent);
     }
-    else{
+    else {
       addToCart(id, title, price, thumbnail)
     }
-    
+
   }
 
   console.log(cart)
