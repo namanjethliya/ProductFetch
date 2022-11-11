@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import './ProductFetch.css'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function ProductFetch() {
   const [randomData, setRandomData] = useState([])
-  const saved = localStorage.getItem('totalCart');
+  const saved = localStorage.getItem('totalCart')
   const [cart, setCart] = useState(saved ? JSON.parse(saved) : [])
+  const [filter, setFilter] = useState('dropdown-item')
 
   useEffect(() => {
 
@@ -40,6 +43,10 @@ function ProductFetch() {
     setCart([...cart, cartItems]);
 
   }
+
+  
+
+
 
   function addCart(id, title, price, thumbnail) {
     // updateInCart(id);
@@ -82,6 +89,21 @@ function ProductFetch() {
             })}
           </ul>
         }
+      </div>
+      <div className='filters'>
+      {
+        <div class="filterDropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" onClick={(()=>{console.log("pakad rha hai")})} aria-expanded="false">
+          Filter <KeyboardArrowDownIcon className='btnArrow'/>
+        </button>
+        <ul class={filter}>
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+      }
+
       </div>
       <div id='details'>
         {

@@ -138,3 +138,39 @@
     height: 50px;
     border-radius: 50%;
 }
+
+.btn{
+    padding: .5rem; 
+    font-size: 20px;
+    width: 150px;
+    cursor: pointer;
+}
+
+
+.filterDropdown ul{
+    list-style: none;
+}
+
+.filterDropdown ul li{
+    position: relative;
+}
+
+.filterDropdown ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px ;
+}
+
+/* .dropdown-item{
+    display: none;
+} */
+
+.dropdown-hover {
+    display: block;
+    background-color: aqua;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border-radius: 5%;
+    overflow: hidden;
+}
