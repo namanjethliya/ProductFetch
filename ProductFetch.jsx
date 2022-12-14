@@ -93,10 +93,10 @@ function ProductFetch() {
       <div className='filters'>
       {
         <div class="filterDropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" onClick={(()=>{console.log("pakad rha hai")})} aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" onClick={()=>{setFilter('dropdown-hover')}} aria-expanded="false">
           Filter <KeyboardArrowDownIcon className='btnArrow'/>
         </button>
-        <ul class={filter}>
+        <ul className={filter}>
           <li><a class="dropdown-item" href="#">Action</a></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
           <li><a class="dropdown-item" href="#">Something else here</a></li>

@@ -161,9 +161,9 @@
     font-size: 20px ;
 }
 
-/* .dropdown-item{
+.dropdown-item{
     display: none;
-} */
+}
 
 .dropdown-hover {
     display: block;
